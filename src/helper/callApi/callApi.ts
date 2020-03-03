@@ -7,26 +7,26 @@ export const callApi = (method: string, path: string, data?: object, protect?: s
       "Authorization": "Bearer " + protect,
       "Content-Type": "application/json"
     } : {
-      "Content-Type": "application/json"
-    },
+        "Content-Type": "application/json"
+      },
     method
   })
     // tslint:disable-next-line: no-any
-    .then(async (res: any) => {
-      if (res.status === 200 || res.status === 201) {
-        return res.text().then((text: string) => {
-          return { text: text ? JSON.parse(text) : {}, res };
+    .then(async (status: any) => {
+      if (status.status === 200 || status.status === 201) {
+        return status.text().then((response: string) => {
+          return { response: response ? JSON.parse(response) : {}, status };
         });
-      } else if (res.status === 204) {
-        return res;
+      } else if (status.status === 204) {
+        return status;
       }
 
-      return res.text().then((text: string) => {
-        throw text ? JSON.parse(text) : {};
+      return status.text().then((response: string) => {
+        throw response ? JSON.parse(response) : {};
       });
     })
     // tslint:disable-next-line: no-any
     .catch((err: any) => {
-      throw err;
+      return err;
     });
 };

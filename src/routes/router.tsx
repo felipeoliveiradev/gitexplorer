@@ -3,20 +3,16 @@ import { Route, Switch } from "react-router-dom";
 
 // import pages
 import { Main } from "layout";
-import {
-  Home,
-  // import routers
-} from "pages";
+import { Paths } from "./objects";
 
 // Protect Router
-
 export const Routers = () => {
-  return(
+  const routeComponents = Paths.map(({ path, component }, key) => (
+    <Route exact path={path} component={component || ""} key={key} />
+  ));
+  return (
     <Main>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        {/* route */}
-      </Switch>
+      <Switch>{routeComponents}</Switch>
     </Main>
   );
 };

@@ -1,10 +1,8 @@
-import { Bars } from "assets/icons";
 import { grid, pxToRem } from "helper";
 import styled from "styled-components";
-import { ITheme } from "styles/themes/type";
 
 export const Container = styled.div`
-  background: ${(props: ITheme) => props.theme.normal.white};
+  background: ${(props) => props.theme.colors.backgroundColor};
   height: ${pxToRem(90)};
   position: relative;
   top:0;
@@ -14,31 +12,47 @@ export const Container = styled.div`
 `;
 
 export const Inner = styled.div`
-  ${grid()};
+  /* ${grid()}; */
   flex: 1;
   display: flex;
   align-content: center;
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  padding: 0 0.905625rem;
+  > div {
+    padding-left: 20px;
+    padding-right: 0px;
+    color:  #caccd1 !important;
+  }
+  input{
+      width: 100%;
+      border: none;
+      outline: none;
+      font-size: 30px;
+      font-weight: 300;
+      padding: 0 0.905625rem;
+      font-family: 'Nunito', sans-serif !important;
+      color:  #caccd1;
+      height: 100%;
+      &::placeholder{
+        font-weight: 300;
+        color:  #caccd1;
+      }
+    }
+    button{
+      background: transparent;
+      border:none;
+      outline: none;
+      cursor: pointer;
+      margin-right: 10px;
+    }
   div {
     display: flex;
     justify-content: center;
-    width: ${pxToRem(130)};
+    flex:1;
     text-align: center;
-    color: ${(props: ITheme) => props.theme.normal.black};
-    font-size: ${pxToRem(24)};
+    color: ${(props) => props.theme.colors.text};
+    font-size: ${ pxToRem(24)};
     font-weight: 700;
-    &:nth-child(2){
-      font-size: ${pxToRem(15)};
-      background-color: ${(props: ITheme) => props.theme.normal.black};
-      mask-image : url("${Bars}");
-      mask-repeat: no-repeat;
-      mask-position: center;
-      height: ${pxToRem(20)};
-      width: ${pxToRem(20)};
-      cursor: pointer;
-    }
   }
 `;

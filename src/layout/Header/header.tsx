@@ -1,27 +1,33 @@
 import { AppContext } from "context";
-import {ModelBody} from "customs/modal/body";
-import React, { useContext } from "react";
-import { ModalsHeaderTypes } from "store/sideModal/types";
+import { Icon } from "react-icons-kit";
+import { search } from "react-icons-kit/feather";
+import React, { useContext, useState, ChangeEvent } from "react";
 import { Container, Inner } from "./style";
 import { IHeader } from "./types";
+import { callApi } from "./../../helper/callApi/callApi";
 export const Header = (props: IHeader) => {
-  const { actions, state } = useContext(AppContext.Context);
-  const handleModal = () => {
-    actions.sideModalAction.setOptions({
-      body: {
-        custom:  <ModelBody/>
-      },
-      header: {
-        type: ModalsHeaderTypes.DEFAULT
-      },
-      state: !state.sideModal.options.state
-    });
+  const [searchValue, setSearchValue] = useState();
+  const { actions } = useContext(AppContext.Context);
+  const loadRepos = async () => {
+    const user = await callApi("GET", `users/${searchValue}`);
+    const repo = await callApi("GET", `users/${searchValue}/repos`);
+    actions.userAction.setInfo({ user, repo });
   };
   return (
     <Container>
       <Inner>
-        <div>Flup</div>
-        <div onClick={handleModal} />
+        <input
+          type="text"
+          placeholder="usuario"
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            setSearchValue(e.target.value)
+          }
+        />
+        <button onClick={loadRepos}>
+          <div>
+            <Icon icon={search} size={30} />
+          </div>
+        </button>
       </Inner>
     </Container>
   );

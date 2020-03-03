@@ -2,6 +2,7 @@ import { IAddListItemActions, IAddListItemState } from "./addListItem/types";
 import { IRegisterAction, IRegisterState } from "./register/types";
 import { ISideModalAction, ISideModalState } from "./sideModal/types";
 import { ILoadingActions, ILoadingState } from "./loading/types";
+import { IUserActions, IUserState } from "./user/types";
 // import
 export interface IStoreContent {
   actions: IActions;
@@ -13,6 +14,7 @@ export interface IStates {
   sideModal: ISideModalState;
   register: IRegisterState;
   loading: ILoadingState;
+  user: IUserState;
   // state
 }
 
@@ -21,6 +23,7 @@ export interface IActions {
   sideModalAction: ISideModalAction;
   registerAction: IRegisterAction;
    loadingAction: ILoadingActions;
+   userAction: IUserActions;
   // action
 }
 

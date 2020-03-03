@@ -4,6 +4,7 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
 
 ${fonts("Nunito", "woff2")};
+${fonts("Roboto", "woff2")};
 
  #root{
    position: relative !important;

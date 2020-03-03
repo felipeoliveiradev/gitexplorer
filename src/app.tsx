@@ -1,4 +1,4 @@
-import { Footer, Header } from "layout";
+import { Header } from "layout";
 import { Modal } from "packages";
 import React from "react";
 import TagManager from "react-gtm-module";
@@ -16,7 +16,6 @@ export const App: React.FunctionComponent = () => {
       <Router>
         <Routers />
       </Router>
-      <Footer />
     </>
   );
 };

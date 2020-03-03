@@ -1,6 +1,5 @@
 import { pxToRem } from "helper";
 import styled from "styled-components";
-import { ITheme } from "styles/themes/type";
 
 export const Container = styled.div`
 
@@ -18,7 +17,7 @@ export const Container = styled.div`
       text-transform: uppercase;
       margin: 0;
       padding:0;
-      color:${(props: ITheme) => props.theme.normal.primary};
+      color:${(props) => props.theme.colors.text};;
     }
     button {
       border: none;

@@ -1,12 +1,11 @@
 import { pxToRem } from "helper";
 import styled, { css, keyframes } from "styled-components";
-import { ITheme } from "styles/themes/type";
 import { IModalStyled } from "./type";
 
 export const Container = styled.div`
   position: fixed;
   transform: ${(props: IModalStyled) => props.stateMoments === false ? "translateX(100%)" : "translateX(0%)"};
-  background: ${(props: ITheme) => props.theme.normal.white};
+  background: ${(props) => props.theme.colors.backgroundColor};
   width: 100%;
   max-width: ${pxToRem(320)};
   right: 0;
@@ -46,21 +45,22 @@ export const ContainerBackground = styled.div`
   /* position: none; */
   display: ${(props: IModalStyled) =>
     props.stateMoments === false ? "none" : "flex"};
-  background: ${(props: ITheme) => props.theme.normal.black};
-  opacity: 0;
-  ${(props: IModalStyled) =>
+  background: ${(props) => props.theme.colors.text};
+opacity: 0;
+${
+  (props: IModalStyled) =>
     props.stateMoments === false
       ? css``
       : css`
           animation: ${rotate} 0.8s forwards;
         `};
-  width: 100%;
-  right: 0;
-  height: 100%;
-  overflow-y: auto;
-  overflow-x: none;
-  z-index: 3;
-  top: 0;
-  flex-direction: column;
-  transition: all 0.5s linear;
+width: 100%;
+right: 0;
+height: 100%;
+overflow-y: auto;
+overflow-x: none;
+z-index: 3;
+top: 0;
+flex-direction: column;
+transition: all 0.5s linear;
 `;
