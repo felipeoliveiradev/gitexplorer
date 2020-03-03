@@ -1,5 +1,5 @@
-import { IType } from "../../../helper/types/types";
 import React from "react";
+import { IType } from "../../../helper/types/types";
 import { Container } from "./style";
 import { ICard } from "./types";
 

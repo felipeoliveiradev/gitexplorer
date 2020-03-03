@@ -2,9 +2,9 @@ import { AddListItemStore } from "./addListItem/action";
 import { LoadingStore } from "./loading/action";
 import { RegisterStore } from "./register/action";
 import { SideModalStore } from "./sideModal/action";
-import { UserStore } from "./user/action";
 // Import Store
 import { IStore, IStoreContent } from "./types";
+import { UserStore } from "./user/action";
 
 export const Store: IStore = (): IStoreContent => {
   const addListItemStore = AddListItemStore();
@@ -19,7 +19,7 @@ export const Store: IStore = (): IStoreContent => {
       registerAction: registerStore.actions,
       sideModalAction: sideModalStore.actions,
       loadingAction: loadingStore.actions,
-      userAction: userStore.actions,
+      userAction: userStore.actions
       // actions
     },
     state: {
@@ -27,7 +27,7 @@ export const Store: IStore = (): IStoreContent => {
       register: registerStore.state,
       sideModal: sideModalStore.state,
       loading: loadingStore.state,
-      user: userStore.state,
+      user: userStore.state
       // state
     }
   };

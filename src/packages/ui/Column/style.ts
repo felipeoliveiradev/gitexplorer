@@ -1,6 +1,6 @@
-import styled from "styled-components";
 import { pxToRem } from "helper";
-import { IColumn } from './types';
+import styled from "styled-components";
+import { IColumn } from "./types";
 
 export const Container = styled.div`
   display: flex;

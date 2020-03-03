@@ -1,19 +1,19 @@
-import React, { useContext } from "react";
-import {
-  Container,
-  Inner,
-  Header,
-  Body,
-  List,
-  Item,
-  Error,
-  Initial
-} from "./style";
-import { IHome } from "./type";
-import { Line, Column, Card, Separator } from "packages/ui";
 import { AppContext } from "context";
 import Lottie from "lottie-react-web";
+import { Card, Column, Line, Separator } from "packages/ui";
+import React, { useContext } from "react";
 import animation from "./animation.json";
+import {
+  Body,
+  Container,
+  Error,
+  Header,
+  Initial,
+  Inner,
+  Item,
+  List
+} from "./style";
+import { IHome } from "./type";
 export const Home = (props: IHome) => {
   const { state } = useContext(AppContext.Context);
   const result = state.user.info;

@@ -1,5 +1,5 @@
 import { SET_USER } from "./consts";
-import { UserActionTypes, IUserState } from "./types";
+import { IUserState, UserActionTypes } from "./types";
 
 export const Reducer = (state: IUserState, action: UserActionTypes) => {
   switch (action.type) {

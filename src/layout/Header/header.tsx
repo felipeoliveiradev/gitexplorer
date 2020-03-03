@@ -1,10 +1,10 @@
 import { AppContext } from "context";
+import React, { ChangeEvent, useContext, useState } from "react";
 import { Icon } from "react-icons-kit";
 import { search } from "react-icons-kit/feather";
-import React, { useContext, useState, ChangeEvent } from "react";
+import { callApi } from "./../../helper/callApi/callApi";
 import { Container, Inner } from "./style";
 import { IHeader } from "./types";
-import { callApi } from "./../../helper/callApi/callApi";
 export const Header = (props: IHeader) => {
   const [searchValue, setSearchValue] = useState();
   const { actions } = useContext(AppContext.Context);

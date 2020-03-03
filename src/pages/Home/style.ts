@@ -1,9 +1,9 @@
-import { pxToRem, grid } from "helper";
+import { grid, pxToRem } from "helper";
 import styled from "styled-components";
 
 export const Header = styled.section`
   width: 100%;
-  background-color: ${props => props.theme.colors.backgroundColor};
+  background-color: ${(props) => props.theme.colors.backgroundColor};
   box-shadow: 0px 0px 39px -9px rgba(196, 196, 196, 1);
   margin-bottom: ${pxToRem(30)};
   hr {
@@ -49,7 +49,7 @@ export const Inner = styled.div`
   flex-direction: column;
 
   h1 {
-    border-bottom: ${pxToRem(2)} dashed ${props => props.theme.colors.text};
+    border-bottom: ${pxToRem(2)} dashed ${(props) => props.theme.colors.text};
     font-weight: 300;
     margin: -${pxToRem(20)} auto 0 auto;
     @media (max-width: 767px) {
@@ -238,7 +238,7 @@ h1, h2 {
   padding: 0;
   font-family: "Roboto", sans-serif;
   font-weight: 600;
-  color: ${props => props.theme.colors.text}
+  color: ${(props) => props.theme.colors.text}
     text-align: left;
 }
 .animation{
@@ -250,7 +250,7 @@ h1, h2 {
   flex-direction: column;
   justify-content: center;
     align-items: flex-start;
-    
+
 }
 
  @media (max-width: ${(props) => pxToRem(props.theme.query.tablet)}) {
@@ -273,6 +273,6 @@ justify-content: center;
 h1{
     text-align: center;
     font-family: "Roboto";
-    color: ${props => props.theme.colors.text};
+    color: ${(props) => props.theme.colors.text};
 }
 `;

@@ -1,10 +1,10 @@
 import React, { createContext } from "react";
 import { defaultActions as loadingDefaultActions, defaultState as loadingDefaultState } from "store/loading/action";
+import { defaultActions as userDefaultActions, defaultState as userDefaultState } from "store/user/action";
 import { Store } from "./store";
 import { defaultActions as addListDefautlActions, defaultState as addListDefautlState } from "./store/addListItem/action";
 import { defaultActions as registerDefaultActions, defaultState as registerDefaultstate } from "./store/register/action";
 import { defaultActions as addSideModalDefaultActions, defaultState as addSideModalDefaultState } from "./store/sideModal/action";
-import { defaultActions as userDefaultActions, defaultState as userDefaultState } from "store/user/action";
 // import
 
 import { IStore, IStoreContent } from "./store/types";
@@ -20,7 +20,7 @@ const ContextStore = (useValue: IStore) => {
       register: registerDefaultstate,
       sideModal: addSideModalDefaultState,
       loading: loadingDefaultState,
-      user: userDefaultState,
+      user: userDefaultState
       // state
     },
     // tslint:disable-next-line: object-literal-sort-keys
@@ -29,7 +29,7 @@ const ContextStore = (useValue: IStore) => {
       registerAction: registerDefaultActions,
       sideModalAction: addSideModalDefaultActions,
       loadingAction: loadingDefaultActions,
-      userAction: userDefaultActions,
+      userAction: userDefaultActions
       // actions
     }
   });

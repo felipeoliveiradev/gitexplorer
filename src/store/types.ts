@@ -1,7 +1,7 @@
 import { IAddListItemActions, IAddListItemState } from "./addListItem/types";
+import { ILoadingActions, ILoadingState } from "./loading/types";
 import { IRegisterAction, IRegisterState } from "./register/types";
 import { ISideModalAction, ISideModalState } from "./sideModal/types";
-import { ILoadingActions, ILoadingState } from "./loading/types";
 import { IUserActions, IUserState } from "./user/types";
 // import
 export interface IStoreContent {
